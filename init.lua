@@ -1,1 +1,1 @@
-require("ahmedabdihd")
+require("ahmedabdihd.config")
