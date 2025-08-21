@@ -20,19 +20,24 @@ return {
         lsp.preset("recommended")
 
         lsp.setup_servers({
-            'tsserver',
+            'ts_ls',
             'rust_analyzer',
+        })
+
+        lsp.configure("ts_ls", {
+            filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+            root_dir = require("lspconfig").util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
+            capabilities = capabilities,
         })
 
         require('mason').setup({})
         require('mason-lspconfig').setup({
             ensure_installed = {
-                'tsserver',
+                'ts_ls',
                 'eslint',
                 'cssls',
                 'unocss',
                 'gopls',
-                'graphql',
                 'tailwindcss',
                 'jedi_language_server',
                 'jsonls',

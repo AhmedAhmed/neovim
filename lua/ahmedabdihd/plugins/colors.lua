@@ -1,5 +1,6 @@
 function ColorMyPencils(color)
-    color = color or "catppuccin"
+    color = color or "rose-pine-moon"
+
     vim.cmd.colorscheme(color)
 
     vim.opt.background = "dark"
@@ -12,14 +13,24 @@ function ColorMyPencils(color)
     vim.api.nvim_set_hl(0, "Folded", { bg = "none" })
     vim.api.nvim_set_hl(0, "FoldColumn", { bg = "none" })
     vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+    vim.api.nvim_set_hl(0, "BufLine", { bg = "#191724" })
 end
 
 return {
+    {
+        "2nthony/vitesse.nvim",
+        dependencies = {
+            "tjdevries/colorbuddy.nvim"
+        },
+    },
     {
         "erikbackman/brightburn.vim",
         config = function()
             ColorMyPencils()
         end
+    },
+    {
+        "Mofiqul/dracula.nvim",
     },
     {
         "folke/tokyonight.nvim",
@@ -28,8 +39,8 @@ return {
             require("tokyonight").setup({
                 -- your configuration comes here
                 -- or leave it empty to use the default settings
-                style = "storm",        -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-                transparent = true,     -- Enable this to disable setting the background color
+                style = "night",        -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+                -- transparent = true,     -- Enable this to disable setting the background color
                 terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
                 styles = {
                     -- Style to be applied to different syntax groups

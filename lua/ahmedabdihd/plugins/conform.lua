@@ -1,5 +1,4 @@
 return {
-
     "stevearc/conform.nvim",
     config = function()
         require('conform').setup({
@@ -17,24 +16,16 @@ return {
                 markdown = { "prettierd", "prettier", stop_after_first = true },
                 elixir = { "mix format" },
                 solidity = { "prettierd" },
-                graphql = { "prettierd" },
-                sql = { "sql_formatter", "pg_format" }
-            },
-            format_on_save = {
-                timeout_ms = 500,
-                lsp_fallback = true,
-            },
-            format_after_save = {
-                lsp_fallback = true,
+                graphql = { "prettierd" }
             },
         });
 
-
-        vim.api.nvim_create_autocmd("BufWritePre", {
-            pattern = "*",
-            callback = function(args)
-                require("conform").format({ bufnr = args.buf })
-            end
-        })
+        -- format on save
+        -- vim.api.nvim_create_autocmd("BufWritePre", {
+        --     pattern = "*",
+        --     callback = function(args)
+        --         require("conform").format({ bufnr = args.buf })
+        --     end
+        -- })
     end
 }

@@ -27,7 +27,7 @@ return {
                     -- where it doesn't cover the original text.
                     -- If left empty the legacy behavior of keeping the first character is retained.
                     replace = nil,
-                },
+              },
             },
         });
     end

@@ -3,13 +3,16 @@ vim.opt.guicursor = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+-- disable autoformat
+vim.b.autoformat = false
+
 -- tabs config
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
-vim.opt.smartindent = true
+-- vim.opt.smartindent = true
 
 vim.opt.wrap = false
 
@@ -32,3 +35,4 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "110"
 
 vim.opt.cursorline = true
+
