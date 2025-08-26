@@ -16,14 +16,20 @@ end)
 vim.keymap.set("n", "<leader>bb", "<cmd>ToggleBlameLine<CR>")
 
 -- oil.nvim
-vim.keymap.set("n", "-", "<cmd>Oil<CR>")
+vim.keymap.set("n", "-", "<cmd>Oil<CR>", { desc = "Open Oil nvim"})
 
+-- sourrce different lua files
 vim.keymap.set("n", "<leader>so", "<cmd>:so ~/.config/nvim/init.lua<CR>")
+vim.keymap.set("n", "<leader><leader>", function()
+    -- command to open the current file in a new tab
+    vim.cmd("so")
+    print("Lua sourced current file")
+end, {desc = "Source current file"})
 
 -- handle buffer switching
-vim.keymap.set("n", "<leader>n", "<cmd>:bprev<CR>");
-vim.keymap.set("n", "<leader>m", "<cmd>:bnext<CR>");
-vim.keymap.set("n", "<leader>x", "<cmd>:bd<CR>");
+-- vim.keymap.set("n", "<leader>n", "<cmd>:bprev<CR>");
+-- vim.keymap.set("n", "<leader>m", "<cmd>:bnext<CR>");
+-- vim.keymap.set("n", "<leader>x", "<cmd>:bd<CR>");
 
 -- move lines up or down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
