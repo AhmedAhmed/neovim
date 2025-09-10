@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-    color = color or "rose-pine-moon"
+    color = color or "tokyonight"
 
     vim.cmd.colorscheme(color)
 
@@ -8,29 +8,22 @@ function ColorMyPencils(color)
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     vim.api.nvim_set_hl(0, "NonText", { bg = "none" })
     vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-    vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
+    -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
     vim.api.nvim_set_hl(0, "Folded", { bg = "none" })
     vim.api.nvim_set_hl(0, "FoldColumn", { bg = "none" })
     vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
-    vim.api.nvim_set_hl(0, "BufLine", { bg = "#191724" })
+    vim.api.nvim_set_hl(0, "BufLine", { bg = "#1e2021" })
+    vim.api.nvim_set_hl(0, "BufferLineFill", { bg = "#1e2021" })
+    vim.api.nvim_set_hl(0, "TabLineFill", { nocombine = true })
+    -- vim.api.nvim_set_hl(0, "BarbecueNormal", { bg = "#1e2021" })
 end
 
 return {
     {
-        "2nthony/vitesse.nvim",
-        dependencies = {
-            "tjdevries/colorbuddy.nvim"
-        },
-    },
-    {
-        "erikbackman/brightburn.vim",
-        config = function()
-            ColorMyPencils()
-        end
-    },
-    {
-        "Mofiqul/dracula.nvim",
+        "craftzdog/solarized-osaka.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
     },
     {
         "folke/tokyonight.nvim",
@@ -59,6 +52,9 @@ return {
         name = "catppuccin",
         priority = 1000,
         config = function()
+            require("onedark").setup {
+                style = "deep"
+            }
             ColorMyPencils()
         end
     },

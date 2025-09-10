@@ -5,7 +5,7 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>gg", "<cmd>!go run github.com/99designs/gqlgen generate<CR>")
 vim.keymap.set("n", "<leader>l", "<cmd>:Lazy<CR>")
 vim.keymap.set("n", "<leader>h", "<cmd>:Mason<CR>")
-vim.keymap.set("n", "<leader>zig", "<cmd>:LspRestart<CR>")
+vim.keymap.set("n", "<leader>r", "<cmd>:LspRestart<CR>")
 
 -- conform.nvim
 vim.keymap.set("", "<leader>f", function()
@@ -18,17 +18,9 @@ vim.keymap.set("n", "<leader>bb", "<cmd>ToggleBlameLine<CR>")
 -- oil.nvim
 vim.keymap.set("n", "-", "<cmd>Oil<CR>", { desc = "Open Oil nvim"})
 
--- sourrce different lua files
-vim.keymap.set("n", "<leader>so", "<cmd>:so ~/.config/nvim/init.lua<CR>")
-vim.keymap.set("n", "<leader><leader>", function()
-    -- command to open the current file in a new tab
-    vim.cmd("so")
-    print("Lua sourced current file")
-end, {desc = "Source current file"})
-
 -- handle buffer switching
--- vim.keymap.set("n", "<leader>n", "<cmd>:bprev<CR>");
--- vim.keymap.set("n", "<leader>m", "<cmd>:bnext<CR>");
+-- vim.keymap.set("n", "<Tab>", "<cmd>:bnext<CR>");
+-- vim.keymap.set("n", "<S-Tab>", "<cmd>:bprev<CR>");
 -- vim.keymap.set("n", "<leader>x", "<cmd>:bd<CR>");
 
 -- move lines up or down

@@ -2,14 +2,14 @@ return {
     -- 'akinsho/bufferline.nvim',
     -- version = "*",
     -- dependencies = 'nvim-tree/nvim-web-devicons',
-    -- config = function ()
-    --     require("bufferline").setup{
+    -- config = function()
+    --     require("bufferline").setup {
     --         options = {
     --             indicator = {
     --                 icon = '▎',
-    --                 color = "#242638",
+    --                 color = "#d79921",
     --             },
-    --         }
+    --         },
     --     }
     -- end
 }
